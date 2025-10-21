@@ -246,12 +246,16 @@ export default function Home() {
              style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
             The Grabbler has one job: steal your shitcoins while you watch helplessly. 
             Click his stash to reclaim your precious gold... if you dare! 💰
+            <br />
+            <span className="text-sm text-gold-light opacity-90 mt-2 inline-block">
+              Based on the legendary 15-year-old meme from The Onion's YouTube channel
+            </span>
           </p>
         </div>
 
-        {/* Game Container with white background */}
+        {/* Game Container with dark gray background */}
         <div className="absolute inset-0 flex items-center justify-center pt-24 pb-4 px-4">
-          <div className="relative w-full h-full max-w-[177.78vh] max-h-[56.25vw] bg-white rounded-3xl shadow-2xl" 
+          <div className="relative w-full h-full max-w-[177.78vh] max-h-[56.25vw] bg-gray-800 rounded-3xl shadow-2xl" 
                style={{ boxShadow: '0 0 60px rgba(139, 92, 246, 0.5), 0 0 120px rgba(79, 70, 229, 0.3)' }}>
             {/* Particle effects */}
             {showParticles && (
@@ -359,6 +363,50 @@ export default function Home() {
                 )}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Bottom Social/CA Section */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3">
+          {/* Contract Address */}
+          <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg animate-fade-in">
+            <span className="text-sm font-semibold text-gray-700">CA:</span>
+            <code className="text-xs font-mono text-purple-600 bg-purple-50 px-3 py-1 rounded">
+              {CONTRACT_ADDRESS}
+            </code>
+            <button
+              onClick={handleCopyCA}
+              className="ml-2 px-4 py-1.5 bg-gradient-to-r from-gold to-gold-dark text-white text-xs font-bold rounded-full hover:scale-105 transition-transform shadow-md"
+            >
+              {copySuccess ? '✓ Copied!' : 'Copy'}
+            </button>
+          </div>
+
+          {/* Social Buttons */}
+          <div className="flex gap-3">
+            <a
+              href="https://www.youtube.com/watch?v=Q4PC8Luqiws"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              Watch on YouTube
+            </a>
+            
+            <a
+              href="https://x.com/i/communities/1980394372169621616"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-2.5 bg-black hover:bg-gray-800 text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              Join X Community
+            </a>
           </div>
         </div>
       </main>
