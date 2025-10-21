@@ -26,8 +26,8 @@ export default function Home() {
   const laughRef = useRef<HTMLAudioElement | null>(null);
   const animationRef = useRef<number>();
   
-  // Contract Address - Replace with actual CA
-  const CONTRACT_ADDRESS = 'YOUR_CONTRACT_ADDRESS_HERE';
+  // Contract Address - Solana memecoin CA
+  const CONTRACT_ADDRESS = 'GSrDWKwWz23JEgrQarRt5iLqdvUEJib4a68Bs2urpump';
 
   // Initialize particles
   const particlesInit = useCallback(async (engine: Engine) => {
